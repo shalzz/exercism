@@ -1,0 +1,167 @@
+trash: Added new job source 0x563a06e970c0 (GVfsBackendTrash)
+trash: Queued new job 0x563a06e97860 (GVfsJobMount)
+trash: send_reply(0x563a06e97860), failed=0 ()
+trash: backend_dbus_handler org.gtk.vfs.Mount:CreateFileMonitor (pid=352635)
+trash: Queued new job 0x563a06e97bc0 (GVfsJobCreateMonitor)
+trash: send_reply(0x563a06e97bc0), failed=0 ()
+trash: backend_dbus_handler org.gtk.vfs.Mount:CreateFileMonitor (pid=352635)
+trash: Queued new job 0x563a06e97bc0 (GVfsJobCreateMonitor)
+trash: send_reply(0x563a06e97bc0), failed=0 ()
+trash: backend_dbus_handler org.gtk.vfs.Mount:QueryInfo (pid=352635)
+trash: Queued new job 0x563a06e7f350 (GVfsJobQueryInfo)
+trash: send_reply(0x563a06e7f350), failed=0 ()
+trash: backend_dbus_handler org.gtk.vfs.Mount:QueryInfo (pid=352635)
+trash: Queued new job 0x563a06e7f3f0 (GVfsJobQueryInfo)
+trash: send_reply(0x563a06e7f3f0), failed=0 ()
+smb: g_vfs_backend_smb_init: default workgroup = 'NULL'
+smb: Added new job source 0x55575d434080 (GVfsBackendSmb)
+smb: Queued new job 0x55575d435140 (GVfsJobMount)
+INFO: Current debug levels:
+  all: 10
+  tdb: 10
+  printdrivers: 10
+  lanman: 10
+  smb: 10
+  rpc_parse: 10
+  rpc_srv: 10
+  rpc_cli: 10
+  passdb: 10
+  sam: 10
+  auth: 10
+  winbind: 10
+  vfs: 10
+  idmap: 10
+  quota: 10
+  acls: 10
+  locking: 10
+  msdfs: 10
+  dmapi: 10
+  registry: 10
+  scavenger: 10
+  dns: 10
+  ldb: 10
+  tevent: 10
+  auth_audit: 10
+  auth_json_audit: 10
+  kerberos: 10
+  drs_repl: 10
+  smb2: 10
+  smb2_credits: 10
+  dsdb_audit: 10
+  dsdb_json_audit: 10
+  dsdb_password_audit: 10
+  dsdb_password_json_audit: 10
+  dsdb_transaction_audit: 10
+  dsdb_transaction_json_audit: 10
+  dsdb_group_audit: 10
+  dsdb_group_json_audit: 10
+Using netbios name SHALZZ-GALP2.
+Using workgroup WORKGROUP.
+smb: do_mount - URI = smb://192.168.1.1/media%20drive
+smb: do_mount - try #0 
+smbc_stat(smb://192.168.1.1/media%20drive)
+smb: auth_callback - kerberos pass
+smb: auth_callback - out: last_user = 'shalzz', last_domain = 'WORKGROUP'
+SMBC_server: server_n=[192.168.1.1] server=[192.168.1.1]
+ -> server_n=[192.168.1.1] server=[192.168.1.1]
+Connecting to 192.168.1.1 at port 445
+Connecting to 192.168.1.1 at port 139
+Socket options:
+	SO_KEEPALIVE = 0
+	SO_REUSEADDR = 0
+	SO_BROADCAST = 0
+	TCP_NODELAY = 1
+	TCP_KEEPCNT = 9
+	TCP_KEEPIDLE = 7200
+	TCP_KEEPINTVL = 75
+	IPTOS_LOWDELAY = 0
+	IPTOS_THROUGHPUT = 0
+	SO_REUSEPORT = 0
+	SO_SNDBUF = 87040
+	SO_RCVBUF = 131072
+	SO_SNDLOWAT = 1
+	SO_RCVLOWAT = 1
+	SO_SNDTIMEO = 0
+	SO_RCVTIMEO = 0
+	TCP_QUICKACK = 1
+	TCP_DEFER_ACCEPT = 0
+map_errno_from_nt_status: 32 bit codes: code=c000020c
+smb: do_mount - [smb://192.168.1.1/media%20drive; 0] res = -1, cancelled = 0, errno = [103] 'Software caused connection abort' 
+smb: do_mount - (errno != EPERM && errno != EACCES), cancelled = 0, breaking
+smb: send_reply(0x55575d435140), failed=1 (Failed to mount Windows share: Software caused connection abort)
+smb: g_vfs_backend_smb_init: default workgroup = 'NULL'
+smb: Added new job source 0x555fca38d080 (GVfsBackendSmb)
+smb: Queued new job 0x555fca38e140 (GVfsJobMount)
+INFO: Current debug levels:
+  all: 10
+  tdb: 10
+  printdrivers: 10
+  lanman: 10
+  smb: 10
+  rpc_parse: 10
+  rpc_srv: 10
+  rpc_cli: 10
+  passdb: 10
+  sam: 10
+  auth: 10
+  winbind: 10
+  vfs: 10
+  idmap: 10
+  quota: 10
+  acls: 10
+  locking: 10
+  msdfs: 10
+  dmapi: 10
+  registry: 10
+  scavenger: 10
+  dns: 10
+  ldb: 10
+  tevent: 10
+  auth_audit: 10
+  auth_json_audit: 10
+  kerberos: 10
+  drs_repl: 10
+  smb2: 10
+  smb2_credits: 10
+  dsdb_audit: 10
+  dsdb_json_audit: 10
+  dsdb_password_audit: 10
+  dsdb_password_json_audit: 10
+  dsdb_transaction_audit: 10
+  dsdb_transaction_json_audit: 10
+  dsdb_group_audit: 10
+  dsdb_group_json_audit: 10
+Using netbios name SHALZZ-GALP2.
+Using workgroup WORKGROUP.
+smb: do_mount - URI = smb://192.168.1.1/media%20drive
+smb: do_mount - try #0 
+smbc_stat(smb://192.168.1.1/media%20drive)
+smb: auth_callback - kerberos pass
+smb: auth_callback - out: last_user = 'shalzz', last_domain = 'WORKGROUP'
+SMBC_server: server_n=[192.168.1.1] server=[192.168.1.1]
+ -> server_n=[192.168.1.1] server=[192.168.1.1]
+Connecting to 192.168.1.1 at port 445
+Connecting to 192.168.1.1 at port 139
+Socket options:
+	SO_KEEPALIVE = 0
+	SO_REUSEADDR = 0
+	SO_BROADCAST = 0
+	TCP_NODELAY = 1
+	TCP_KEEPCNT = 9
+	TCP_KEEPIDLE = 7200
+	TCP_KEEPINTVL = 75
+	IPTOS_LOWDELAY = 0
+	IPTOS_THROUGHPUT = 0
+	SO_REUSEPORT = 0
+	SO_SNDBUF = 87040
+	SO_RCVBUF = 131072
+	SO_SNDLOWAT = 1
+	SO_RCVLOWAT = 1
+	SO_SNDTIMEO = 0
+	SO_RCVTIMEO = 0
+	TCP_QUICKACK = 1
+	TCP_DEFER_ACCEPT = 0
+map_errno_from_nt_status: 32 bit codes: code=c000020c
+smb: do_mount - [smb://192.168.1.1/media%20drive; 0] res = -1, cancelled = 0, errno = [103] 'Software caused connection abort' 
+smb: do_mount - (errno != EPERM && errno != EACCES), cancelled = 0, breaking
+smb: send_reply(0x555fca38e140), failed=1 (Failed to mount Windows share: Software caused connection abort)
