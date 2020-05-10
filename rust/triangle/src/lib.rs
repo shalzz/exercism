@@ -10,6 +10,10 @@ impl Triangle {
             return None;
         }
 
+        if 2 * sides.iter().max().unwrap() >= sides.iter().sum() {
+            return None;
+        }
+
         Some(Triangle {
             a: sides[0],
             b: sides[1],
