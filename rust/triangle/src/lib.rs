@@ -1,35 +1,42 @@
-pub struct Triangle {
-    a: u64,
-    b: u64,
-    c: u64,
+use std::cmp::Ordering;
+
+#[derive(PartialEq)]
+pub enum Triangle {
+    Equilateral,
+    Scalene,
+    Isosceles,
 }
 
 impl Triangle {
-    pub fn build(sides: [u64; 3]) -> Option<Triangle> {
-        if sides.iter().any(|&side| side <= 0) {
+    pub fn build<T>(mut sides: [T; 3]) -> Option<Triangle>
+    where
+        T: PartialOrd + Copy + Default + std::ops::Add<Output = T>,
+    {
+        sides.sort_by(|a, b| a.partial_cmp(b).unwrap_or(Ordering::Equal));
+        if sides.iter().any(|&side| side <= T::default()) || sides[2] > sides[0] + sides[1] {
             return None;
         }
 
-        if 2 * sides.iter().max().unwrap() >= sides.iter().sum() {
-            return None;
+        match (
+            sides[0] == sides[1],
+            sides[1] == sides[2],
+            sides[2] == sides[0],
+        ) {
+            (false, false, false) => Some(Triangle::Scalene),
+            (true, true, true) => Some(Triangle::Equilateral),
+            _ => Some(Triangle::Isosceles),
         }
-
-        Some(Triangle {
-            a: sides[0],
-            b: sides[1],
-            c: sides[2],
-        })
     }
 
     pub fn is_equilateral(&self) -> bool {
-        self.a == self.b && self.b == self.c && self.c == self.a
+        *self == Triangle::Equilateral
     }
 
     pub fn is_scalene(&self) -> bool {
-        self.a != self.b && self.b != self.c && self.c != self.a
+        *self == Triangle::Scalene
     }
 
     pub fn is_isosceles(&self) -> bool {
-        self.a == self.b || self.b == self.c || self.c == self.a
+        *self == Triangle::Isosceles
     }
 }
