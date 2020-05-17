@@ -1,15 +1,12 @@
 use std::cmp::Ordering;
 
-pub fn find(array: &[i32], key: i32) -> Option<usize> {
-    if array.is_empty() {
-        return None;
-    }
+pub fn find<R: AsRef<[T]>, T: PartialOrd>(array: R, key: T) -> Option<usize> {
+    let array = array.as_ref();
     let mid = array.len() / 2;
-    let value = array[mid];
 
-    match value.cmp(&key) {
+    match array.get(mid)?.partial_cmp(&key).unwrap() {
         Ordering::Equal => Some(mid),
-        Ordering::Greater => find(array.split_at(mid).0, key),
-        Ordering::Less => find(array.split_at(mid + 1).1, key).map(|index| mid + 1 + index),
+        Ordering::Greater => find(&array[..mid], key),
+        Ordering::Less => find(&array[(mid + 1)..], key).map(|index| mid + 1 + index),
     }
 }
